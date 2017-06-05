@@ -35,16 +35,32 @@ public class LoginServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    /**
+     *  TODO login process setting Attribute(login) in boolean
+     *  True - set Attribute(user) Dispatch to view/main.jsp
+     *  False - Dispatch to WEB-INF/jsp/index.jsp
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         response.setContentType("text/html;charset=UTF-8");
         LoginDao dao = new LoginDao();
-        account user = dao.Login("admin","admin");
-        
-        
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        account user = dao.Login(username, password);
+        // Login Succeeds
+        if(user!=null){
+        request.setAttribute("login","Success");
         RequestDispatcher rd = request.getRequestDispatcher("view/main.jsp");
         request.setAttribute("account",user);
         rd.forward(request, response);
+        }else{
+            // Login FAILED
+            request.setAttribute("login","Incorrect USERNAME or PASSWORD");
+            RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/index.jsp");
+        
+            rd.forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

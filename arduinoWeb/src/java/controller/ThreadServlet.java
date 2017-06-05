@@ -37,6 +37,13 @@ public class ThreadServlet extends HttpServlet {
      * @throws java.lang.ClassNotFoundException
      * @throws java.sql.SQLException
      */
+    
+    /**
+     *  TODO GET ALL comments for chosen forum setting 2 Attributes( curPost , cList )
+     *  curPost = current post
+     *  cList = all comments for the chosen post
+     *      Dispatch to "view/tread_view.jsp"
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");

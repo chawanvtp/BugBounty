@@ -74,8 +74,12 @@
  
 <br>
  
-<b> Total Post : ${fn:length(postList)}</b>
- 
+<b> Total Post : ${fn:length(postList)}</b> <br><br>
+<div>
+    <form method="POST" action="">
+        <input type="text">
+    </form>
+</div>
 </body>
  
 </html>

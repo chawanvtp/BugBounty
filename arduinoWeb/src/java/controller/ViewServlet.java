@@ -34,6 +34,14 @@ public class ViewServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      * @throws java.sql.SQLException
      */
+    
+    
+    /**
+     *  TODO GET ALL comments for chosen forum setting 2 Attributes( curPost , cList )
+     *  curPost = current post
+     *  cList = all comments for the chosen post
+     *      Dispatch to "view/post_view.jsp"
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
