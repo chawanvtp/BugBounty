@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.dao.LoginDao;
 import model.pojo.account;
 
@@ -52,6 +53,7 @@ public class LoginServlet extends HttpServlet {
         if(user!=null){
         request.setAttribute("login","Success");
         RequestDispatcher rd = request.getRequestDispatcher("view/main.jsp");
+        request.getSession().setAttribute("account",user);
         request.setAttribute("account",user);
         rd.forward(request, response);
         }else{

@@ -10,11 +10,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title> JSP Page </title>
     </head>
     <body>
-        <h1> Welcome </h1>
-        <h2> ${account.username}  - email : ${account.email}</h2>
-        <a href="ViewServlet"> Forum </a> <br><br>
+        <br><h1 style="background-color: #04519b; color: #f9f9f9; al"> Welcome 
+            <a  style="color: #f9f9f9" href="ViewServlet"> Forum </a> <br><br> </h1>
+            <h2> ${account.username}</h2>
+            <h2> email : ${account.email} </h2>
     </body>
 </html>

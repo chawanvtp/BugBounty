@@ -75,6 +75,8 @@ public class PostDao {
         return postList;
     }
     
+    
+    
     public post find(int pid) throws SQLException{
         String sql = "SELECT * FROM post where idpost="+pid;
         post curpost = new post();
@@ -93,7 +95,7 @@ public class PostDao {
         return curpost;
     }
     
-    
+    /*
     public static void main(String[] args) throws SQLException{
         PostDao dao = new PostDao();
         List<post> pList = dao.findAll();
@@ -101,5 +103,5 @@ public class PostDao {
             System.out.print(p.toString());
         }
      }
-    
+    */
 }

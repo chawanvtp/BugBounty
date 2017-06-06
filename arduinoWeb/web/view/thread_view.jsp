@@ -17,7 +17,7 @@
 <html>
  
 <head>
- 
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  
 <title> Tread_View.jsp </title>
@@ -76,6 +76,26 @@
  
 <b> Total Comment : ${fn:length(commentList)}</b>
  
+
+<div style="width: 100%; height: 100px">
+    <form method="POST" action="ThreadServlet">
+        <input type="hidden" name="addPID" value="${curPost.getId()}">
+        Comment's Detail : 
+        <input type="text" name="addCommentDetail" style="
+               width: 100%; 
+               height:100px; 
+               text-align: left;
+               padding-left:0;
+               padding-top:0;
+               padding-bottom:0.4em;
+               padding-right: 0.4em;">
+        
+        <input type="hidden" name="addUserID" value="${account.id}">
+        <input type="hidden" name="addUserName" value="${account.username}">
+        <input type="submit" value=" POST ">
+    </form> 
+</div>
+        
 </body>
  
 </html>

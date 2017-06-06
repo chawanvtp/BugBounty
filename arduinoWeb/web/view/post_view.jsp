@@ -26,23 +26,23 @@
  
 <body>
  
-<h1> Post_View </h1>
+<h1 align="center"> Post_View </h1>
  
-<table width="50%" border="1">
+<table width="100%" border="5" style="border-color: #011d37">
  
 <thead>
  
 <tr>
  
-<th width="5%">PostID</th>
+<th >PostID</th>
  
-<th width="5%">OwnerID</th>
+<th >PosterID</th>
  
-<th width="8%">Bounty</th>
+<th > minBounty</th>
  
-<th width="15%">Topic</th>
+<th >Topic</th>
  
-<th width="15%">Target</th>
+<th >Target</th>
  
 </tr>
  
@@ -56,9 +56,9 @@
  
 <td align="center">${p.id}</td>
  
-<td>${p.ownerid}</td>
+<td align="center">${p.ownerid}</td>
  
-<td align="right">${p.bounty}</td>
+<td align="center">${p.bounty}</td>
  
 <td align="center"><a href="ThreadServlet?pid=${p.id}"> ${p.topic} </a></td>
  
@@ -73,12 +73,31 @@
 </table>
  
 <br>
- 
+ <h2> ${account.username}  - email : ${account.email}</h2>
 <b> Total Post : ${fn:length(postList)}</b> <br><br>
-<div>
-    <form method="POST" action="">
-        <input type="text">
-    </form>
+
+
+<div style="width: 100%; height: 100px">
+    <form method="POST" action="ViewServlet">
+        Topic : 
+        <input type="text" name="addPostTopic">
+        Target : 
+        <input type="text" name="addTarget">
+        Bounty :
+        <input type="text" name="addBounty"> <br>
+        Detail : 
+        <input type="text" name="addPostDetail" style="
+               width: 100%; 
+               height:100px; 
+               text-align: left;
+               padding-left:0;
+               padding-top:0;
+               padding-bottom:0.4em;
+               padding-right: 0.4em;">
+        
+        <input type="text" name="addOwnerID" value="${account.id}">
+        <input type="submit" value=" POST ">
+    </form> 
 </div>
 </body>
  
