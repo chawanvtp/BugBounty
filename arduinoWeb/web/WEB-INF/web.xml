@@ -20,14 +20,6 @@
         <servlet-name>ThreadServlet</servlet-name>
         <servlet-class>controller.ThreadServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>AddPostServlet</servlet-name>
-        <servlet-class>controller.PostServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CommentServlet</servlet-name>
-        <servlet-class>controller.CommentServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -39,14 +31,6 @@
     <servlet-mapping>
         <servlet-name>ThreadServlet</servlet-name>
         <url-pattern>/ThreadServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddPostServlet</servlet-name>
-        <url-pattern>/AddPostServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CommentServlet</servlet-name>
-        <url-pattern>/CommentServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
