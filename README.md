@@ -7,3 +7,6 @@ A Web Application named "BugBounty" provide a simple web forum using "NetBeans -
  - Simple MySQL function
  - Servlet
  - MVC
+ OBJECTIVES
+ - TO allow user to post/comment a forum
+ - Forum's Content include a TARGET ( where to TEST is any bug exists ), minBOUNTY ( minimum REWARED if a bug found )
