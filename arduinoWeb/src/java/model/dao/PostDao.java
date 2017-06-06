@@ -23,9 +23,9 @@ import model.pojo.post;
  */
 public class PostDao {
     private String driver = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:3306/arduinodb?zeroDateTimeBehavior=convertToNull";
+    private String url = "jdbc:mysql://localhost:3305/arduinodb?zeroDateTimeBehavior=convertToNull";
     private String user = "root";
-    private String pass = "123455";
+    private String pass = "aretisd";
     private Connection connect = null;
     
     public PostDao(){
@@ -75,6 +75,8 @@ public class PostDao {
         return postList;
     }
     
+    
+    
     public post find(int pid) throws SQLException{
         String sql = "SELECT * FROM post where idpost="+pid;
         post curpost = new post();
@@ -93,7 +95,7 @@ public class PostDao {
         return curpost;
     }
     
-    
+    /*
     public static void main(String[] args) throws SQLException{
         PostDao dao = new PostDao();
         List<post> pList = dao.findAll();
@@ -101,5 +103,5 @@ public class PostDao {
             System.out.print(p.toString());
         }
      }
-    
+    */
 }

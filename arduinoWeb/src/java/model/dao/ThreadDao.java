@@ -22,9 +22,9 @@ import model.pojo.post;
  */
 public class ThreadDao {
     private String driver = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:3306/arduinodb?zeroDateTimeBehavior=convertToNull";
+    private String url = "jdbc:mysql://localhost:3305/arduinodb?zeroDateTimeBehavior=convertToNull";
     private String user = "root";
-    private String pass = "123455";
+    private String pass = "aretisd";
     private Connection connect = null;
     
      public ThreadDao() throws ClassNotFoundException{
@@ -71,6 +71,9 @@ public class ThreadDao {
         }
          
         return commentList;
+        
     }
+    
+    
     
 }

@@ -20,9 +20,9 @@ import model.pojo.account;
  */
 public class LoginDao {
     private String driver = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:3306/arduinodb?zeroDateTimeBehavior=convertToNull";
+    private String url = "jdbc:mysql://localhost:3305/arduinodb?zeroDateTimeBehavior=convertToNull";
     private String user = "root";
-    private String pass = "123455";
+    private String pass = "aretisd";
     private Connection connect = null;
     
     public LoginDao() throws ClassNotFoundException{
@@ -52,22 +52,27 @@ public class LoginDao {
  
     }
     
-    //Login function Login(username,password) -> return account model
+    /** Login function Login(username,password) -> return model.pojo ACCOUNT
+     *  account model includes -> id , username , password , email
+     */
     public account Login(String username,String password) throws SQLException{
         String sql = "SELECT * FROM account where username='"+username+"' and password='"+password+"'";
         account user = new account();
         try {
             PreparedStatement ps = connect.prepareStatement(sql);
             ResultSet result = ps.executeQuery();
+           
             if(result.next()){
                 user.edit(result.getInt("id"),result.getString("username"),result.getString("password"),result.getString("email"));
+                
+                return user;
             }
         } catch (Exception e){
             System.out.println("Throw at Login function");
             e.printStackTrace();
         }
          
-        return user;
+        return null;
     }
     
     

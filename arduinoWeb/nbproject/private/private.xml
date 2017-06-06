@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/web/form/comment_form.jsp</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/src/java/controller/ThreadServlet.java</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/web/view/main.jsp</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/web/view/post_view.jsp</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/src/java/controller/LoginServlet.java</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/web/form/post_form.jsp</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/src/java/model/dao/ThreadDao.java</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/src/java/model/dao/AddPostDao.java</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/web/redirect.jsp</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/src/java/controller/ViewServlet.java</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/src/java/model/dao/PostDao.java</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/src/java/model/dao/AddCommentDao.java</file>
+            <file>file:/W:/NetBeansProjects/arduinoWeb/arduinoWeb/src/java/model/dao/LoginDao.java</file>
+        </group>
+    </open-files>
+</project-private>

@@ -6,6 +6,7 @@
 package controller;
 
 import java.io.IOException;
+import static java.lang.System.out;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -15,6 +16,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.dao.AddCommentDao;
 import model.dao.PostDao;
 import model.dao.ThreadDao;
 import model.pojo.comment;
@@ -37,13 +40,22 @@ public class ThreadServlet extends HttpServlet {
      * @throws java.lang.ClassNotFoundException
      * @throws java.sql.SQLException
      */
+    
+    /**
+     *  TODO GET ALL comments for chosen forum setting 2 Attributes( curPost , cList )
+     *  curPost = current post
+     *  cList = all comments for the chosen post
+     *      Dispatch to "view/tread_view.jsp"
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         int curPID = Integer.parseInt(request.getParameter("pid"));
+        request.getSession().setAttribute("pid",curPID);
+        
         ThreadDao dao = new ThreadDao();
         post curPost = new PostDao().find(curPID);
-        List<comment> cList = dao.findAll(curPID);
+        List<comment> cList = dao.findAll(curPID); 
         
         //Pass cList AND currentPost to target
         RequestDispatcher rd = request.getRequestDispatcher("view/thread_view.jsp");
@@ -85,6 +97,28 @@ public class ThreadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            int curPID = Integer.parseInt(request.getParameter("addPID"));
+        
+        
+        /**
+         *     TODO Comment if addCommentdetail is filled.
+         *      -   Insert New AddCommentDao into post-DB
+         *          - data in format [ addPostID , addDetail , addUserID , addUserName ]
+         */
+
+           AddCommentDao addDao = new AddCommentDao();
+           addDao.Comment(curPID, request.getParameter("addCommentDetail") , Integer.parseInt(request.getParameter("addUserID")), request.getParameter("addUserName"));
+           addDao.close();
+           
+        //Pass cList AND currentPost to target
+         ThreadDao dao = new ThreadDao();
+        post curPost = new PostDao().find(curPID);
+        List<comment> cList = dao.findAll(curPID);
+        
+        RequestDispatcher rd = request.getRequestDispatcher("view/thread_view.jsp");
+        request.setAttribute("commentList",cList);
+        request.setAttribute("curPost",curPost);
+        rd.forward(request, response);
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ThreadServlet.class.getName()).log(Level.SEVERE, null, ex);
